@@ -36,12 +36,12 @@ export default function RootLayout({
                         __html: `
                             (function() {
                                 try {
-                                    const theme = localStorage.getItem('theme');
-                                    if (theme === '"dark"' || theme === 'dark') {
-                                        document.documentElement.classList.add('dark');
-                                    } else {
-                                        document.documentElement.classList.remove('dark');
-                                    }
+                                    const stored = localStorage.getItem('theme');
+                                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                                    // Default to dark if no stored preference
+                                    const isDark = stored ? (stored === '"dark"' || stored === 'dark') : prefersDark || true;
+                                    if (isDark) document.documentElement.classList.add('dark');
+                                    else document.documentElement.classList.remove('dark');
                                 } catch (e) {}
                             })();
                         `,
