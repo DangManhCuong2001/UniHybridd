@@ -1,0 +1,22 @@
+/* Main styles entry point - imports all modular CSS files */
+
+/* Base styles and Tailwind imports */
+@import './base.css';
+
+/* Theme variables for light and dark modes */
+@import './themes.css';
+
+/* Horizontal spin animation for decorative token images */
+@keyframes spin-horizontal {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.spin-horizontal {
+    animation: spin-horizontal 12s linear infinite;
+    transform-style: preserve-3d;
+}
