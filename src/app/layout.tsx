@@ -60,6 +60,7 @@ export default function RootLayout({
                         <div className="z-0 absolute top-[800px] h-[800px] w-full bg-[linear-gradient(to_top,#0A0A0A_0%,#450822_60%,#6B2E48_80%,#8F3D61_100%)]">
                             <div className="absolute inset-0 bg-cover bg-no-repeat mix-blend-overlay h-[800px] top-0" style={{ backgroundImage: "url('/images/bg_unihybrid_2.png')" }}></div>
                         </div>
+
                         <div className="relative z-1 ">
                             <Container>{children}</Container>
                         </div>
